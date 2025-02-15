@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6-Entradas/Computer Organization and Design The Hardware Software Interface RISC V Edition.md",
+                "file": "1-Notas/Notas.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Computer Organization and Design The Hardware Software Interface RISC V Edition"
+              "title": "Notas"
             }
           }
         ]
@@ -181,10 +181,13 @@
       "copilot:Open Copilot Chat": false
     }
   },
-  "active": "f9cb1acb8a6c91df",
+  "active": "20821c20ce732fce",
   "lastOpenFiles": [
-    "Repositorio/Prueba.md",
+    "2-Recursos/Libros.md",
+    "1-Notas/Notas.md",
+    "4-Indices/Indices.md",
     "6-Entradas/Computer Organization and Design The Hardware Software Interface RISC V Edition.md",
+    "Repositorio/Prueba.md",
     "0-Git",
     "3-Etiquetas/Performance.md",
     "3-Etiquetas/Instruction Set.md",
