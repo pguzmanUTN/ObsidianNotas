@@ -1,0 +1,202 @@
+{
+  "main": {
+    "id": "d9bda30a5dd357c1",
+    "type": "split",
+    "children": [
+      {
+        "id": "c0884e25a030d348",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f9cb1acb8a6c91df",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "6-Entradas/Computer Organization and Design The Hardware Software Interface RISC V Edition.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Computer Organization and Design The Hardware Software Interface RISC V Edition"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "846d891d38ccb2e4",
+    "type": "split",
+    "children": [
+      {
+        "id": "afd116dec39a5d40",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "20821c20ce732fce",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "a926cd23ca2203f8",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "79680bdaa915b455",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "aaadb087b1ebbb94",
+    "type": "split",
+    "children": [
+      {
+        "id": "634ce43f801a613d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "75c870e0edd73f46",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "6-Entradas/Computer Organization and Design The Hardware Software Interface RISC V Edition.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Computer Organization and Design The Hardware Software Interface RISC V Edition"
+            }
+          },
+          {
+            "id": "011b72c6ced2cdd2",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "6-Entradas/Computer Organization and Design The Hardware Software Interface RISC V Edition.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Computer Organization and Design The Hardware Software Interface RISC V Edition"
+            }
+          },
+          {
+            "id": "cfd0689d3170af8b",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "eb08f49e391f5834",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "6-Entradas/Computer Organization and Design The Hardware Software Interface RISC V Edition.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Computer Organization and Design The Hardware Software Interface RISC V Edition"
+            }
+          },
+          {
+            "id": "77937e887beedc6b",
+            "type": "leaf",
+            "state": {
+              "type": "copilot-chat-view",
+              "state": {},
+              "icon": "message-square",
+              "title": "Copilot"
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "omnisearch:Omnisearch": false,
+      "obsidian-importer:Open Importer": false,
+      "copilot:Open Copilot Chat": false
+    }
+  },
+  "active": "f9cb1acb8a6c91df",
+  "lastOpenFiles": [
+    "Repositorio/Prueba.md",
+    "6-Entradas/Computer Organization and Design The Hardware Software Interface RISC V Edition.md",
+    "0-Git",
+    "3-Etiquetas/Performance.md",
+    "3-Etiquetas/Instruction Set.md",
+    "3-Etiquetas/RISC-V.md",
+    "5-Plantillas/Entrada Básica.md",
+    "Untitled.md",
+    "6-Entradas",
+    "5-Plantillas",
+    "4-Indices",
+    "3-Etiquetas",
+    "2-Recursos",
+    "1-Notas",
+    "Welcome.md"
+  ]
+}
