@@ -76,13 +76,35 @@ Donde el registro x11 ,x12 y x13 contienen a las variables a, b y c respectivame
 Para restar se sigue el mismo procedimiento solo que la instruccion es sub.
 
 #### Ejemplo 2
-Para hacer una operacion mas complicada, por ejemplo f= (a+b) - (c+d)
+Para hacer una operación mas complicada, por ejemplo f= (a+b) - (c+d)
 Hay que hacer un par de instrucciones mas y crear variables temporales
-	add x20, x11, x12
-	add x21, x13, x14
-	sub x15, x20, x21
+
+	add x20, x11, x12 //Suma a+b y lo guarda en un registro temporal
+	add x21, x13, x14 //Suma c+d y lo guarda en un registro temporal
+	sub x15, x20, x21 //resta los registros temporales y los guarda en f
+	
 Donde los registros x20 y x21 pertenecen a variables temporales y los registros x11, x12, ....,x15 pertenecen a las variables: a,b,c,d y f respectivamente.
 ### Operadores de memoria
+
 Los mismos sirven para transferir datos de la memoria a los registros y viceversa
+#### Comando ld
+
+El comando ld permite cargar un registro especifico con el contenido de una dirección de memoria, el mismo cuenta con dos argumentos
+
+	ld register_address memory_address
+	
+Donde register_address es la dirección del registro donde guardar el contenido de la memoria y memory_address es la dirección de memoria que queremos cargar en el registro
+
+Hay un caso interesante es cuando queremos acceder a una array de datos, o a un elemento especifico de la misma, por ejemplo imagínate que tenemos un vector de 10 longitud llamado B y queremos acceder al dato B[6], en sabemos que este vector empieza en la dirección de memoria x19, entonces podemos guardar el dato contenido en esa posición del vector en un registro, por ejemplo, el x5, haciendo lo siguiente
+
+	ld x5 6(x19)
+
+Donde x5 es donde cargamos el dato que queremos x19 es la base de la dirreccion del registro del vector y 6 es el offset,
+
+#### Estructura registros
+
+Si bien la estructura de los registros es doubleword, es decir, cada registro por separado tiene 64 bits, es decir 8 bytes, las arquitecturas de hoy en dia pueden acceder a bytes individuales de los registros, por eso mismo, la dirección de un doubleword coincide con la dirección de un byte individual contenido en el mismo y las dirrecciones de las doubleword difieren en 8 de cada una. 
+
+![[Pasted image 20250215203841.png]]
 # Referencias
 
