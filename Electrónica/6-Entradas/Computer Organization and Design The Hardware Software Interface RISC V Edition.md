@@ -73,6 +73,7 @@ Supongamos que queremos sumar dos números a = b + c. El comando a realizar seri
 Y también podemos verlo en forma de registros
 	add x11, x12, x13
 Donde el registro x11 ,x12 y x13 contienen a las variables a, b y c respectivamente.
+
 Para restar se sigue el mismo procedimiento solo que la instruccion es sub.
 
 #### Ejemplo 2
@@ -84,6 +85,12 @@ Hay que hacer un par de instrucciones mas y crear variables temporales
 	sub x15, x20, x21 //resta los registros temporales y los guarda en f
 	
 Donde los registros x20 y x21 pertenecen a variables temporales y los registros x11, x12, ....,x15 pertenecen a las variables: a,b,c,d y f respectivamente.
+
+####  Operador addi
+
+Este operador funciona exactamente igual que el operador add, solo que el ultimo operando puede ser una constante.
+
+	addi x22, x22, 4
 ### Operadores de memoria
 
 Los mismos sirven para transferir datos de la memoria a los registros y viceversa
@@ -97,14 +104,47 @@ Donde register_address es la dirección del registro donde guardar el contenido 
 
 Hay un caso interesante es cuando queremos acceder a una array de datos, o a un elemento especifico de la misma, por ejemplo imagínate que tenemos un vector de 10 longitud llamado B y queremos acceder al dato B[6], en sabemos que este vector empieza en la dirección de memoria x19, entonces podemos guardar el dato contenido en esa posición del vector en un registro, por ejemplo, el x5, haciendo lo siguiente
 
-	ld x5 6(x19)
+	ld x5, 6(x19)
 
 Donde x5 es donde cargamos el dato que queremos x19 es la base de la dirreccion del registro del vector y 6 es el offset,
 
+#### Comando sd
+
+Es la instrucción complementaria a ld, ya que copia el dato de un registro a la memoria.
+
+	sd x5, 6(x19)
+
+Este ejemplo copia los datos del registro x5 y los guarda en esa dirección de memoria	
+
+#### Ejemplo integrador
+
+Supongamos una variable h asociada con el registro x21 y la dirección base de una array A que empieza en x22. ¿Cual es el código de RISC-V Assembly para la siguiente asignación en C?
+
+	A[12]=h + A[8]
+
+Solución
+
+	ld x9, 64(x22) //Guarda el dato de A[8] en un registro temporal, se pone de
+					//offset 64 debido son palabras doubleword y el offset puede
+					//acceder a bytes individuales, por eso mismo el offset se
+					//calcula como 8 (que es el elemento del array) x 8
+					// (que es cuantos bytes tiene un doubleword)
+	add x9, x21 , x9 //Se guarda la suma en el registro x9
+	sd x9, 96(x22) //Guarda la suma en memoria en A[12], 96=12x8
 #### Estructura registros
 
-Si bien la estructura de los registros es doubleword, es decir, cada registro por separado tiene 64 bits, es decir 8 bytes, las arquitecturas de hoy en dia pueden acceder a bytes individuales de los registros, por eso mismo, la dirección de un doubleword coincide con la dirección de un byte individual contenido en el mismo y las dirrecciones de las doubleword difieren en 8 de cada una. 
+Si bien la estructura de los registros es doubleword, es decir, cada registro por separado tiene 64 bits, es decir 8 bytes, las arquitecturas de hoy en dia pueden acceder a bytes individuales de los registros, por eso mismo, la dirección de un doubleword coincide con la dirección de un byte individual contenido en el mismo y las direcciones de las doubleword difieren en 8 de cada una. 
 
 ![[Pasted image 20250215203841.png]]
+
+## Notas varias
+
+### Nota 1
+Algunos programas tienen mas variables que registros tiene una computadora, por eso mismo, los compiladores tratan de mantener las variables mas usadas en los registros y las menos usadas en memoria, ya que los registros son mas rápidos que la memoria. Usan comandos loads y store para ir moviendo variables entre registros y memoria. El proceso de poner las variables menos usadas en memoria se llama spilling registers
+
+### Nota 2
+
+
+
 # Referencias
 
