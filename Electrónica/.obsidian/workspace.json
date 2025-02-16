@@ -150,24 +150,13 @@
               "icon": "lucide-list",
               "title": "Outline of Computer Organization and Design The Hardware Software Interface RISC V Edition"
             }
-          },
-          {
-            "id": "77937e887beedc6b",
-            "type": "leaf",
-            "state": {
-              "type": "copilot-chat-view",
-              "state": {},
-              "icon": "message-square",
-              "title": "Copilot"
-            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -184,11 +173,11 @@
   },
   "active": "f9cb1acb8a6c91df",
   "lastOpenFiles": [
+    "6-Entradas/Computer Organization and Design The Hardware Software Interface RISC V Edition.md",
     "0-Imagenes",
     "0-Imagenes/Pasted image 20250215203841.png",
     "0-Imagenes/Pasted image 20250215203756.png",
     "0-Imagenes/Pasted image 20250215203759.png",
-    "6-Entradas/Computer Organization and Design The Hardware Software Interface RISC V Edition.md",
     "1-Notas/Notas.md",
     "2-Recursos/Libros.md",
     "4-Indices/Indices.md",
