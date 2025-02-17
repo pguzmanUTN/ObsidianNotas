@@ -18,6 +18,8 @@ Instruction Set Architecture: Interfaz abstracta entre el hardware y el nivel ma
 Data transfer function: Comando que sirve para la transferencia de datos entre memoria y registros
 
 Address: Un valor utilizado para delinear la ubicación de un elemento de datos específico dentro de una matriz de memoria.
+
+Opcode: Campo que denota la operación y formato de la instrucción.
 ## Principios de diseño de RISC-V
 
 ### Principio de diseño 1: La simplicidad favorece la regularidad
@@ -28,6 +30,10 @@ Esto se refiere a que al tener tres operandos, ni mas, ni menos, en las instrucc
 Se refiere al caso de tener un numero limitado de registros, típicamente 32 registros de 64bits en las computadores actuales. Un numero muy grande de registros puede aumentar el tiempo de ciclo de reloj (Clock Cycle time) porque las señales eléctricas tardan mas en viajar cuando lo hacen más lejos
 
 Si bien este principio no es absoluto, ya que 31 registros tal vez no sean mas rápidos que 32, la verdad detrás de tales observaciones causa que los diseñadores de computadoras se lo tomen en serio, ya que el mismo diseñador debe encontrar el balance el deseo de los programas por tener mas registros con el deseo del diseñador por mantener el ciclo de reloj mas rápido
+
+### Principio de diseño 3: Buenos diseños demandan buenos compromisos
+
+
 
 ## Performance Equations
 
@@ -137,10 +143,37 @@ Si bien la estructura de los registros es doubleword, es decir, cada registro po
 
 ![[Pasted image 20250215203841.png]]
 
+### Formato de instrucción
+
+El formato de instrucción es una representación mediante campos de números binarios de la instrucción que deberá cumplir la computadora por ejemplo
+
+	add x9, x20, x21
+
+![[Pasted image 20250216190613.png]]
+![[Pasted image 20250216190633.png]]
+
+El primer , cuarto y ultimo campo nos indica que la instrucción es una suma. El segundo campo nos da la dirección del segundo operando, el tercer campo nos da la del primer operando y por ultimo el quinto campo nos dice la dirección de registro donde guardar la suma.
+
+![[Pasted image 20250216191225.png]]
+
+Los campos de instrucción tienen nombre cada uno, lo que nos facilita entender lo que hace cada uno.
+
+**opcode:** Operación básica de la instrucción
+opcode: Campo que denota la operación y formato de la instrucción.
+
+**rd:** Registro de destino del operando, obtiene el resultado de la operación
+**funct3:** Otro campo adicional de opcode
+**rs1:** Primer registro fuente de operando
+**rs2:** Segundo registro fuente de operando
+**funct7:** Otro campo adicional de opcode
+
+
+
 ## Notas varias
 
 ### Nota 1
-Algunos programas tienen mas variables que registros tiene una computadora, por eso mismo, los compiladores tratan de mantener las variables mas usadas en los registros y las menos usadas en memoria, ya que los registros son mas rápidos que la memoria. Usan comandos loads y store para ir moviendo variables entre registros y memoria. El proceso de poner las variables menos usadas en memoria se llama spilling registers
+
+Algunos programas tienen mas variables que registros tiene una computadora, por eso mismo, los compiladores tratan de mantener las variables mas usadas en los registros y las menos usadas en memoria, ya que los registros son mas rápidos que la memoria. Usan comandos loads y store para ir moviendo variables entre registros y memoria. El proceso de poner las variables menos usadas en memoria se llama spilling registers.
 
 ### Nota 2
 
