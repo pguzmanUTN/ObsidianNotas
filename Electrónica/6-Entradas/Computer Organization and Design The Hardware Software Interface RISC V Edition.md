@@ -137,6 +137,10 @@ Solución
 					// (que es cuantos bytes tiene un doubleword)
 	add x9, x21 , x9 //Se guarda la suma en el registro x9
 	sd x9, 96(x22) //Guarda la suma en memoria en A[12], 96=12x8
+### Operadores Logicos
+
+![[Pasted image 20250216223901.png]]
+
 ## Estructura registros
 
 Si bien la estructura de los registros es doubleword, es decir, cada registro por separado tiene 64 bits, es decir 8 bytes, las arquitecturas de hoy en dia pueden acceder a bytes individuales de los registros, por eso mismo, la dirección de un doubleword coincide con la dirección de un byte individual contenido en el mismo y las direcciones de las doubleword difieren en 8 de cada una. 
@@ -199,6 +203,7 @@ Los bits immediate en este caso están partidos en los 5 bits mas bajos y los 7 
 
 
 ### Opcode para distintas instrucciones y ejemplo de cada formato
+
 ld: se pone el opcode y el funct3 en valor 3
 add: se pone opcode en valor 51 y funct3 en 0
 addi: se pone el opcode en valor 19 y funct3 en 0
@@ -215,6 +220,9 @@ Algunos programas tienen mas variables que registros tiene una computadora, por 
 ### Nota 2
 Si bien existen las instrucciones add y sub para sumar y restar datos de registros, y usamos la instrucción addi para sumar una constante al registro, no existe una instrucción subi, ya que el campo immediate esta representado en complemento a 2, por lo tanto con la instrucción addi podemos substraer constantes
 
+### Nota 3
+En el caso especial de los shift lógicos, tienen formato de instrucción I-type, pero solo los 6 bits mas a la izquierda son usados del immediate para indicar el shift 
 
+![[Pasted image 20250216224258.png]]
 # Referencias
 
