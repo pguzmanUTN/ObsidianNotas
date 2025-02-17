@@ -11,6 +11,18 @@
             "id": "f9cb1acb8a6c91df",
             "type": "leaf",
             "state": {
+              "type": "pdf",
+              "state": {
+                "file": "2-Recursos/RISC-V-Reference-Data-Green-Card.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "RISC-V-Reference-Data-Green-Card"
+            }
+          },
+          {
+            "id": "f2ff01b76d66dea1",
+            "type": "leaf",
+            "state": {
               "type": "markdown",
               "state": {
                 "file": "6-Entradas/Computer Organization and Design The Hardware Software Interface RISC V Edition.md",
@@ -21,7 +33,8 @@
               "title": "Computer Organization and Design The Hardware Software Interface RISC V Edition"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -171,23 +184,26 @@
       "copilot:Open Copilot Chat": false
     }
   },
-  "active": "20821c20ce732fce",
+  "active": "f2ff01b76d66dea1",
   "lastOpenFiles": [
+    "2-Recursos/RISC-V-Reference-Data-Green-Card.pdf",
+    "6-Entradas/Computer Organization and Design The Hardware Software Interface RISC V Edition.md",
+    "2-Recursos/Computer Organization and Design RISC V edition.pdf",
+    "2-Recursos/Computer Organization and Design ARM edition.pdf",
+    "2-Recursos/Libros.md",
+    "0-Imagenes/Pasted image 20250217113844.png",
+    "0-Imagenes/Pasted image 20250217091421.png",
+    "6-Entradas/![[.md",
+    "Pasted image 20250217091309.png",
+    "Pasted image 20250217091308.png",
+    "0-Imagenes/Pasted image 20250217091307.png",
     "0-Imagenes/Pasted image 20250216224258.png",
     "0-Imagenes/Pasted image 20250216223901.png",
     "0-Imagenes/Pasted image 20250216222434.png",
     "0-Imagenes/Pasted image 20250216222324.png",
     "0-Imagenes/Pasted image 20250216212358.png",
-    "0-Imagenes/Pasted image 20250216211026.png",
-    "0-Imagenes/Pasted image 20250216191225.png",
-    "0-Imagenes/Pasted image 20250216190633.png",
-    "0-Imagenes/Pasted image 20250216190613.png",
-    "Pasted image 20250216190609.png",
-    "6-Entradas/Computer Organization and Design The Hardware Software Interface RISC V Edition.md",
     "0-Imagenes",
-    "0-Imagenes/Pasted image 20250215203841.png",
     "1-Notas/Notas.md",
-    "2-Recursos/Libros.md",
     "4-Indices/Indices.md",
     "Repositorio/Prueba.md",
     "0-Git",
@@ -201,7 +217,6 @@
     "4-Indices",
     "3-Etiquetas",
     "2-Recursos",
-    "1-Notas",
     "Welcome.md"
   ]
 }

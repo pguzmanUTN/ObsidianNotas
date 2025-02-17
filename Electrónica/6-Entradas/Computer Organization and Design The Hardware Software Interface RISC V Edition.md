@@ -225,5 +225,13 @@ Si bien existen las instrucciones add y sub para sumar y restar datos de registr
 En el caso especial de los shift lógicos, tienen formato de instrucción I-type, pero solo los 6 bits mas a la izquierda son usados del immediate para indicar el shift 
 
 ![[Pasted image 20250216224258.png]]
-# Referencias
 
+### Nota 4
+![[Pasted image 20250217091307.png]]
+![[Pasted image 20250217091421.png]]
+
+### Nota 5
+![[Pasted image 20250217113844.png]]
+# Referencias
+[[RISC-V-Reference-Data-Green-Card.pdf]]
+[[Computer Organization and Design RISC V edition.pdf]]
