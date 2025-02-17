@@ -33,6 +33,7 @@ Si bien este principio no es absoluto, ya que 31 registros tal vez no sean mas r
 
 ### Principio de diseño 3: Buenos diseños demandan buenos compromisos
 
+Todas las instrucciones tienen la misma longitud en código maquina.
 
 
 ## Performance Equations
