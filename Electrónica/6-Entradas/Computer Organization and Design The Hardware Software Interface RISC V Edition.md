@@ -137,24 +137,15 @@ Solución
 					// (que es cuantos bytes tiene un doubleword)
 	add x9, x21 , x9 //Se guarda la suma en el registro x9
 	sd x9, 96(x22) //Guarda la suma en memoria en A[12], 96=12x8
-#### Estructura registros
+## Estructura registros
 
 Si bien la estructura de los registros es doubleword, es decir, cada registro por separado tiene 64 bits, es decir 8 bytes, las arquitecturas de hoy en dia pueden acceder a bytes individuales de los registros, por eso mismo, la dirección de un doubleword coincide con la dirección de un byte individual contenido en el mismo y las direcciones de las doubleword difieren en 8 de cada una. 
 
 ![[Pasted image 20250215203841.png]]
 
-### Formato de instrucción
+## Formato de instrucción
 
-El formato de instrucción es una representación mediante campos de números binarios de la instrucción que deberá cumplir la computadora por ejemplo
-
-	add x9, x20, x21
-
-![[Pasted image 20250216190613.png]]
-![[Pasted image 20250216190633.png]]
-
-El primer , cuarto y ultimo campo nos indica que la instrucción es una suma. El segundo campo nos da la dirección del segundo operando, el tercer campo nos da la del primer operando y por ultimo el quinto campo nos dice la dirección de registro donde guardar la suma.
-
-![[Pasted image 20250216191225.png]]
+El formato de instrucción es una representación mediante campos de números binarios de la instrucción que deberá cumplir la computadora, la longitud de todos los formatos de instrucción es la misma, ósea de 32 bits.
 
 Los campos de instrucción tienen nombre cada uno, lo que nos facilita entender lo que hace cada uno.
 
@@ -167,8 +158,54 @@ opcode: Campo que denota la operación y formato de la instrucción.
 **rs2:** Segundo registro fuente de operando
 **funct7:** Otro campo adicional de opcode
 
+**immediate:** Valor constante interpretado como valor en complemento a 2, por lo tanto interpreta números de -2^11 hasta 2^11 -1. Pero cuando se usa para instrucciones load, el immediate representa el offset, entonces puede hacer referencia en una region de ±2^11 a cualquier double word en esa region con la dirección base
 
 
+### Formato de instrucción (R-type)}
+
+Es uno de los formatos de instrucción y se usa cuando todos los operandos son registros
+
+![[Pasted image 20250216191225.png]]
+
+#### Ejemplo
+
+	add x9, x20, x21
+
+![[Pasted image 20250216190613.png]]
+![[Pasted image 20250216190633.png]]
+
+El primer , cuarto y ultimo campo nos indica que la instrucción es una suma. El segundo campo nos da la dirección del segundo operando, el tercer campo nos da la del primer operando y por ultimo el quinto campo nos dice la dirección de registro donde guardar la suma.
+
+### Formato de instrucción (I-type)
+
+Es otro del los formatos de instrucción y es usado para operaciones aritméticas cuando uno de los operandos es una constante. Su formato es el siguiente:
+
+![[Pasted image 20250216211026.png]]
+
+#### Ejemplo
+
+La instrucción 
+	ld x9, 64(x22)
+Ubica el 22 de x22 en el campo rs1, el 64 en el campo immediate y el 9 de x9 en el campo rd
+
+### Formato de instrucción (S-type)
+
+Es otro formato de instrucción que necesita dos fuentes de registro, para la dirección base y la store data. y un immediate para el offset de la dirección. Los campos S-type tienen la siguiente forma.
+
+![[Pasted image 20250216212358.png]]
+
+Los bits immediate en este caso están partidos en los 5 bits mas bajos y los 7 bits mas altos, se decidió mantener así porque los campos rs2 y rs1 se los mantiene en el mismo lugar que todos los formatos de instrucción. Manteniendo los formatos de instrucción de la forma mas similar posible reduce la complejidad del hardware. Similarmente, el opcode y funct3 tiene el mismo espacio en todas las localizaciones y siempre se encuentran en el mismo lugar.
+
+
+
+### Opcode para distintas instrucciones y ejemplo de cada formato
+ld: se pone el opcode y el funct3 en valor 3
+add: se pone opcode en valor 51 y funct3 en 0
+addi: se pone el opcode en valor 19 y funct3 en 0
+sd se pone el opcode en valor 35 y el funct3 en valor 3
+
+![[Pasted image 20250216222324.png]]
+![[Pasted image 20250216222434.png]]
 ## Notas varias
 
 ### Nota 1
@@ -176,7 +213,7 @@ opcode: Campo que denota la operación y formato de la instrucción.
 Algunos programas tienen mas variables que registros tiene una computadora, por eso mismo, los compiladores tratan de mantener las variables mas usadas en los registros y las menos usadas en memoria, ya que los registros son mas rápidos que la memoria. Usan comandos loads y store para ir moviendo variables entre registros y memoria. El proceso de poner las variables menos usadas en memoria se llama spilling registers.
 
 ### Nota 2
-
+Si bien existen las instrucciones add y sub para sumar y restar datos de registros, y usamos la instrucción addi para sumar una constante al registro, no existe una instrucción subi, ya que el campo immediate esta representado en complemento a 2, por lo tanto con la instrucción addi podemos substraer constantes
 
 
 # Referencias
