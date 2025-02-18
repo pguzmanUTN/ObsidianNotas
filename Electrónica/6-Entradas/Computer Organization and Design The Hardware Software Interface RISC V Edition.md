@@ -236,6 +236,20 @@ En el caso especial de los shift lógicos, tienen formato de instrucción I-type
 ### Nota 6
 
 ![[Pasted image 20250217200125.png]]
+### Nota 7
+En la ejecución de un procedimiento (Función), el programa debe seguir estos seis pasos:
+1. Colocar los parámetros en un lugar donde el procedimiento pueda acceder a ellos.
+2. Transferir el control al procedimiento.
+3. Adquirir los recursos de almacenamiento necesarios para el procedimiento.
+4. Realizar la tarea deseada.
+5. Colocar el valor del resultado en un lugar donde el programa que lo llama pueda acceder a él.
+6. Devolver el control al punto de origen, ya que un procedimiento puede ser llamado desde varios puntos en un programa.
+
+### Nota 8
+
+En la idea del programa almacenado (stored-program) está implícita la necesidad de tener un registro que guarde la dirección de la instrucción que se está ejecutando actualmente. Por razones históricas, este registro casi siempre se denomina contador de programa (PC Program Counter).
+
+
 ## RISC V ASSEMBLY CODIGOS
 ### EJEMPLO 1 
 			.global _start

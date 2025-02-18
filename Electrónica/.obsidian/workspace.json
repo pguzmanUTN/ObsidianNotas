@@ -45,7 +45,8 @@
               "title": "Computer Organization and Design The Hardware Software Interface RISC V Edition"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -102,8 +103,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "aaadb087b1ebbb94",
@@ -167,22 +167,20 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2-Recursos/Computer Organization and Design RISC V edition.pdf",
-                "followCursor": false,
-                "showSearch": false,
+                "file": "6-Entradas/Computer Organization and Design The Hardware Software Interface RISC V Edition.md",
+                "followCursor": true,
+                "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Computer Organization and Design RISC V edition"
+              "title": "Outline of Computer Organization and Design The Hardware Software Interface RISC V Edition"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -197,7 +195,7 @@
       "copilot:Open Copilot Chat": false
     }
   },
-  "active": "f9cb1acb8a6c91df",
+  "active": "fd1fd1bdc1c8d8ff",
   "lastOpenFiles": [
     "2-Recursos/Computer Organization and Design ARM edition.pdf",
     "2-Recursos/Computer Organization and Design RISC V edition.pdf",
