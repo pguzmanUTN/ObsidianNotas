@@ -232,6 +232,52 @@ En el caso especial de los shift lógicos, tienen formato de instrucción I-type
 
 ### Nota 5
 ![[Pasted image 20250217113844.png]]
+
+### Nota 6
+
+![[Pasted image 20250217200125.png]]
+## RISC V ASSEMBLY CODIGOS
+### EJEMPLO 1 
+			.global _start
+	  # if (i == j) f = g + h; else f = g −h;
+	_start:
+	
+		bne x22, x23 , Else #Chequea si J e I son iguales si no va a Else
+		add x19, x20 , x21 # f= g+h
+		j Exit
+	
+	Else:
+	
+		sub x19, x20, x21
+		
+	Exit:
+		ret
+### EJEMPLO 2
+
+.global _start
+	  ## while (save[i] == k) i += 1;
+  
+	  ## x22 i, x24 k, base addres save x25
+	_start:
+
+	loop: slli x10 , x22 ,3 ## Multiplica el valor de i por 8 y lo guarda en el registro 10
+	
+	add x10, x10, x25 ###Suma el valor la direccion base del array save por el valor de i multiplicado por 7 para obtener el valor de
+	#la direccion del save[i]
+	lw x9, 0(x10) ##Guarda save[i] en x9
+	
+	##La base address del array se guarda en el registro, pero recordemos que el array se encuentra en memoria
+	##Por lo tanto hay que ir cargando lo de la memoria en el registro x9, osea cada elemento del save[i]
+	
+	
+	L1: bne x9, x24, Exit ##Si save[i]!=k entonces va a exit, si no ejecuta lo de abajo
+	addi x22, x22 ,1 #i=i+1
+	j loop
+	
+	Exit:
+	add x14, x15, x16
+	ret
+
 # Referencias
 [[RISC-V-Reference-Data-Green-Card.pdf]]
 [[Computer Organization and Design RISC V edition.pdf]]
