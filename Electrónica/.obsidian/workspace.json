@@ -35,14 +35,12 @@
             "id": "fd1fd1bdc1c8d8ff",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "6-Entradas/Computer Organization and Design The Hardware Software Interface RISC V Edition.md",
-                "mode": "source",
-                "source": false
+                "file": "0-Imagenes/Pasted image 20250218053656.png"
               },
-              "icon": "lucide-file",
-              "title": "Computer Organization and Design The Hardware Software Interface RISC V Edition"
+              "icon": "lucide-image",
+              "title": "Pasted image 20250218053656"
             }
           }
         ],
@@ -119,7 +117,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "6-Entradas/Computer Organization and Design The Hardware Software Interface RISC V Edition.md",
+                "file": "0-Imagenes/Pasted image 20250218053656.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -129,7 +127,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Computer Organization and Design The Hardware Software Interface RISC V Edition"
+              "title": "Backlinks for Pasted image 20250218053656"
             }
           },
           {
@@ -167,13 +165,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "6-Entradas/Computer Organization and Design The Hardware Software Interface RISC V Edition.md",
+                "file": "0-Imagenes/Pasted image 20250218053656.png",
                 "followCursor": true,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Computer Organization and Design The Hardware Software Interface RISC V Edition"
+              "title": "Outline of Pasted image 20250218053656"
             }
           }
         ]
@@ -195,13 +193,13 @@
       "copilot:Open Copilot Chat": false
     }
   },
-  "active": "fd1fd1bdc1c8d8ff",
+  "active": "20821c20ce732fce",
   "lastOpenFiles": [
+    "6-Entradas/Computer Organization and Design The Hardware Software Interface RISC V Edition.md",
     "2-Recursos/Computer Organization and Design ARM edition.pdf",
     "2-Recursos/Computer Organization and Design RISC V edition.pdf",
-    "6-Entradas/Computer Organization and Design The Hardware Software Interface RISC V Edition.md",
     "6-Entradas/Computer Organization and Design The Hardware Software Interface ARM Edition.md",
-    "Pasted image 20250218053656.png",
+    "0-Imagenes/Pasted image 20250218053656.png",
     "0-Imagenes/Pasted image 20250218053538.png",
     "2-Recursos/ARM-v8-Quick-Reference-Guide.pdf",
     "2-Recursos/RISC-V-Reference-Data-Green-Card.pdf",
