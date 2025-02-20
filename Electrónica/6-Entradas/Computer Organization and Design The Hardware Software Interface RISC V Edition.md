@@ -33,6 +33,7 @@ Si bien este principio no es absoluto, ya que 31 registros tal vez no sean mas r
 
 ### Principio de diseño 3: Buenos diseños demandan buenos compromisos
 
+Todas las instrucciones tienen la misma longitud en código maquina.
 
 
 ## Performance Equations
@@ -137,6 +138,10 @@ Solución
 					// (que es cuantos bytes tiene un doubleword)
 	add x9, x21 , x9 //Se guarda la suma en el registro x9
 	sd x9, 96(x22) //Guarda la suma en memoria en A[12], 96=12x8
+### Operadores Logicos
+
+![[Pasted image 20250216223901.png]]
+
 ## Estructura registros
 
 Si bien la estructura de los registros es doubleword, es decir, cada registro por separado tiene 64 bits, es decir 8 bytes, las arquitecturas de hoy en dia pueden acceder a bytes individuales de los registros, por eso mismo, la dirección de un doubleword coincide con la dirección de un byte individual contenido en el mismo y las direcciones de las doubleword difieren en 8 de cada una. 
@@ -199,6 +204,7 @@ Los bits immediate en este caso están partidos en los 5 bits mas bajos y los 7 
 
 
 ### Opcode para distintas instrucciones y ejemplo de cada formato
+
 ld: se pone el opcode y el funct3 en valor 3
 add: se pone opcode en valor 51 y funct3 en 0
 addi: se pone el opcode en valor 19 y funct3 en 0
@@ -215,6 +221,115 @@ Algunos programas tienen mas variables que registros tiene una computadora, por 
 ### Nota 2
 Si bien existen las instrucciones add y sub para sumar y restar datos de registros, y usamos la instrucción addi para sumar una constante al registro, no existe una instrucción subi, ya que el campo immediate esta representado en complemento a 2, por lo tanto con la instrucción addi podemos substraer constantes
 
+### Nota 3
+En el caso especial de los shift lógicos, tienen formato de instrucción I-type, pero solo los 6 bits mas a la izquierda son usados del immediate para indicar el shift 
+
+![[Pasted image 20250216224258.png]]
+
+### Nota 4
+![[Pasted image 20250217091307.png]]
+![[Pasted image 20250217091421.png]]
+
+### Nota 5
+![[Pasted image 20250217113844.png]]
+
+### Nota 6
+
+![[Pasted image 20250217200125.png]]
+### Nota 7
+En la ejecución de un procedimiento (Función), el programa debe seguir estos seis pasos:
+1. Colocar los parámetros en un lugar donde el procedimiento pueda acceder a ellos.
+2. Transferir el control al procedimiento.
+3. Adquirir los recursos de almacenamiento necesarios para el procedimiento.
+4. Realizar la tarea deseada.
+5. Colocar el valor del resultado en un lugar donde el programa que lo llama pueda acceder a él.
+6. Devolver el control al punto de origen, ya que un procedimiento puede ser llamado desde varios puntos en un programa.
+
+### Nota 8
+
+En la idea del programa almacenado (stored-program) está implícita la necesidad de tener un registro que guarde la dirección de la instrucción que se está ejecutando actualmente. Por razones históricas, este registro casi siempre se denomina contador de programa (PC Program Counter).
+
+### Nota 9
+#### Stack Pointer
+Valor que indica la dirección asignada más recientemente en una pila y que muestra dónde se deben volcar los registros o dónde se pueden encontrar los valores de registros antiguos. En RISC-V, es el registro sp o x2.
+
+## RISC V ASSEMBLY CODIGOS
+### EJEMPLO 1 
+			.global _start
+	  # if (i == j) f = g + h; else f = g −h;
+	_start:
+	
+		bne x22, x23 , Else #Chequea si J e I son iguales si no va a Else
+		add x19, x20 , x21 # f= g+h
+		j Exit
+	
+	Else:
+	
+		sub x19, x20, x21
+		
+	Exit:
+		ret
+### EJEMPLO 2
+
+.global _start
+	  ## while (save[i] == k) i += 1;
+  
+	  ## x22 i, x24 k, base addres save x25
+	_start:
+
+	loop: slli x10 , x22 ,3 ## Multiplica el valor de i por 8 y lo guarda en el registro 10
+	
+	add x10, x10, x25 ###Suma el valor la direccion base del array save por el valor de i multiplicado por 7 para obtener el valor de
+	#la direccion del save[i]
+	lw x9, 0(x10) ##Guarda save[i] en x9
+	
+	##La base address del array se guarda en el registro, pero recordemos que el array se encuentra en memoria
+	##Por lo tanto hay que ir cargando lo de la memoria en el registro x9, osea cada elemento del save[i]
+	
+	
+	L1: bne x9, x24, Exit ##Si save[i]!=k entonces va a exit, si no ejecuta lo de abajo
+	addi x22, x22 ,1 #i=i+1
+	j loop
+	
+	Exit:
+	add x14, x15, x16
+	ret
+### EJEMPLO 3
+
+	long long int leaf_example (long long int g, long long int h, long long int i, 
+     long long int j) { 
+     
+	long long int f; 
+	
+	f = (g + h) −(i + j); 
+	
+	return f; }
+En RISCV Assembly
+	.global _start
+	_start:
+	#### g, h, i, j ; x10 a x13
+	#### f ; x20
+	leaf_example:
+	
+	addi sp , sp , -24 #Espacio para tres elementos 3x8
+	
+	sw x5, 16(sp) #Guarda los elementos en esos registros en memoria
+	sw x6, 8(sp)
+	sw x20, 0(sp)
+	
+	add x5, x10 ,x11 # g+h
+	add x6, x12, x13 #i+j
+	sub x20, x5 ,x6 # (g+h)-(i+j)
+	
+	addi x17, x20, 0 # Ubica el resultado en el registro 17
+	
+	lw x20,0(sp) #Restaura los elementos guardados en memoria
+	lw x6,8(sp)
+	lw x5,16(sp)
+	addi sp , sp , 24 #Elimina el especio para tres elementos
+	
+	jalr x0 , 0(x1) ##Vuelve a donde fue llamada la funcion
 
 # Referencias
-
+[[RISC-V-Reference-Data-Green-Card.pdf]]
+[[Computer Organization and Design RISC V edition.pdf]]
