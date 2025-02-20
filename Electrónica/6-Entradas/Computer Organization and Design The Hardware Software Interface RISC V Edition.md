@@ -249,6 +249,9 @@ En la ejecución de un procedimiento (Función), el programa debe seguir estos s
 
 En la idea del programa almacenado (stored-program) está implícita la necesidad de tener un registro que guarde la dirección de la instrucción que se está ejecutando actualmente. Por razones históricas, este registro casi siempre se denomina contador de programa (PC Program Counter).
 
+### Nota 9
+#### Stack Pointer
+Valor que indica la dirección asignada más recientemente en una pila y que muestra dónde se deben volcar los registros o dónde se pueden encontrar los valores de registros antiguos. En RISC-V, es el registro sp o x2.
 
 ## RISC V ASSEMBLY CODIGOS
 ### EJEMPLO 1 
@@ -291,6 +294,41 @@ En la idea del programa almacenado (stored-program) está implícita la necesida
 	Exit:
 	add x14, x15, x16
 	ret
+### EJEMPLO 3
+
+	long long int leaf_example (long long int g, long long int h, long long int i, 
+     long long int j) { 
+     
+	long long int f; 
+	
+	f = (g + h) −(i + j); 
+	
+	return f; }
+En RISCV Assembly
+	.global _start
+	_start:
+	#### g, h, i, j ; x10 a x13
+	#### f ; x20
+	leaf_example:
+	
+	addi sp , sp , -24 #Espacio para tres elementos 3x8
+	
+	sw x5, 16(sp) #Guarda los elementos en esos registros en memoria
+	sw x6, 8(sp)
+	sw x20, 0(sp)
+	
+	add x5, x10 ,x11 # g+h
+	add x6, x12, x13 #i+j
+	sub x20, x5 ,x6 # (g+h)-(i+j)
+	
+	addi x17, x20, 0 # Ubica el resultado en el registro 17
+	
+	lw x20,0(sp) #Restaura los elementos guardados en memoria
+	lw x6,8(sp)
+	lw x5,16(sp)
+	addi sp , sp , 24 #Elimina el especio para tres elementos
+	
+	jalr x0 , 0(x1) ##Vuelve a donde fue llamada la funcion
 
 # Referencias
 [[RISC-V-Reference-Data-Green-Card.pdf]]
