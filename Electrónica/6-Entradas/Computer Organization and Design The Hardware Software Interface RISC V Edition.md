@@ -201,8 +201,11 @@ Es otro formato de instrucción que necesita dos fuentes de registro, para la di
 
 Los bits immediate en este caso están partidos en los 5 bits mas bajos y los 7 bits mas altos, se decidió mantener así porque los campos rs2 y rs1 se los mantiene en el mismo lugar que todos los formatos de instrucción. Manteniendo los formatos de instrucción de la forma mas similar posible reduce la complejidad del hardware. Similarmente, el opcode y funct3 tiene el mismo espacio en todas las localizaciones y siempre se encuentran en el mismo lugar.
 
+### Tabla formatos de instrucción y respectivo opcode
 
+![[Pasted image 20250221114842.png]]
 
+![[Pasted image 20250221115021.png]]
 ### Opcode para distintas instrucciones y ejemplo de cada formato
 
 ld: se pone el opcode y el funct3 en valor 3
@@ -231,6 +234,9 @@ En el caso especial de los shift lógicos, tienen formato de instrucción I-type
 ![[Pasted image 20250217091421.png]]
 
 ### Nota 5
+
+Registros que se preservan antes y después de una llamada de una función
+
 ![[Pasted image 20250217113844.png]]
 
 ### Nota 6
@@ -253,6 +259,9 @@ En la idea del programa almacenado (stored-program) está implícita la necesida
 #### Stack Pointer
 Valor que indica la dirección asignada más recientemente en una pila y que muestra dónde se deben volcar los registros o dónde se pueden encontrar los valores de registros antiguos. En RISC-V, es el registro sp o x2.
 
+### Nota 10
+
+![[Pasted image 20250221133024.png]]
 ## RISC V ASSEMBLY CODIGOS
 ### EJEMPLO 1 
 			.global _start
@@ -347,11 +356,12 @@ En RISCV Assembly
 	.global _start
 	_start:
 	
-	addi x10, x10, 5 #Valor de n a cargar
-	addi x11, x11, 5 # Valor para ver en el registro que valor se cargo
+	li x10, 5 #Valor de n a cargar
+	li x11, 5 # Valor para ver en el registro que valor se cargo
 	call fact ##Llamada a factorial
-	addi x15, x15, 1 ##Flag de que termino el calculo
-	call exit1 ##Fin del programa
+	li x15, 1 ##Flag de que termino el calculo
+	mv x12, x10 ##Valor del calculo en hexadecimal
+	jal x0 , exit ##Fin del programa
 	
 	
 	fact: addi sp, sp, -16#// adjust stack for 2 items 
@@ -360,21 +370,51 @@ En RISCV Assembly
 	
 	addi x5, x10, -1 #// x5 = n - 1 
 	bge x5, x0, L1 #// if (n - 1) >= 0, go to L1
-	
 	addi x10, x0, 1# // return 1 
 	addi sp, sp, 16 #// pop 2 items off stack 
 	ret
 	
 	L1: addi x10, x10, -1 # // n >= 1: argument gets (n −1) 
 	jal x1, fact  #// call fact with (n −1)
-	
-	addi x6, x10, 0 #// return from jal: move result of fact(n - 1) to x6: 
+	mv x6, x10 #// return from jal: move result of fact(n - 1) to x6: 
 	lw x10, 0(sp) #// restore argument n 
 	lw x1, 8(sp) #// restore the return address 
 	addi sp, sp, 16 #// adjust stack pointer to pop 2 items
 	mul x10, x10, x6 #// return n * fact (n −1)
 	
 	ret
+	
+	exit:
+		jal x0 , _start ##Fin del programa
+
+### EJEMPLO 5
+
+
+	long long int sum (long long int n, long long int acc) 
+	{ 
+	if (n > 0) 
+	return sum(n − 1, acc + n); 
+	else return acc; 
+	}
+En RiscV Assembly
+
+	.global _start
+	_start:
+	
+	li  x10, 5 #Valor de n a cargar
+	li  x11, 0 # Valor acc
+	call sum ##Llamada a sum
+	li  x15, 1 ##Flag de que termino el calculo
+	call exit1 ##Fin del programa
+	
+	
+	sum: ble x10, x0, sum_exit #// go to sum_exit if n <= 0 
+	add x11, x11, x10 #// add n to acc 
+	addi x10, x10, -1 #// subtract 1 from n 
+	jal x0, sum #// jump to sum
+	
+	sum_exit: mv x12, x11 #// return value acc 
+	jalr x0, 0(x1) #// return to caller
 	
 	exit2:
 	 call exit1

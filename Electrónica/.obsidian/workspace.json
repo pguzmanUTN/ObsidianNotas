@@ -103,7 +103,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "aaadb087b1ebbb94",
@@ -180,7 +181,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -196,10 +198,14 @@
   },
   "active": "022f5c678f4277ff",
   "lastOpenFiles": [
+    "Pasted image 20250221133024.png",
     "2-Recursos/Computer Organization and Design RISC V edition.pdf",
     "6-Entradas/Computer Organization and Design The Hardware Software Interface RISC V Edition.md",
-    "6-Entradas/Computer Organization and Design The Hardware Software Interface ARM Edition.md",
+    "Pasted image 20250221115021.png",
+    "6-Entradas/Center.md",
+    "0-Imagenes/Pasted image 20250221114842.png",
     "2-Recursos/RISC-V-Reference-Data-Green-Card.pdf",
+    "6-Entradas/Computer Organization and Design The Hardware Software Interface ARM Edition.md",
     "2-Recursos/Computer Organization and Design ARM edition.pdf",
     "2-Recursos/ARM-v8-Quick-Reference-Guide.pdf",
     "0-Imagenes/Pasted image 20250218053656.png",
@@ -214,8 +220,6 @@
     "Untitled.md",
     "2-Recursos/Libros.md",
     "6-Entradas/![[.md",
-    "Pasted image 20250217091309.png",
-    "Pasted image 20250217091308.png",
     "0-Imagenes",
     "1-Notas/Notas.md",
     "4-Indices/Indices.md",
