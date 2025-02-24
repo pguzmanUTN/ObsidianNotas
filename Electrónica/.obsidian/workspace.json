@@ -13,10 +13,10 @@
             "state": {
               "type": "pdf",
               "state": {
-                "file": "2-Recursos/RISC-V-Reference-Data-Green-Card.pdf"
+                "file": "2-Recursos/Computer Organization and Design ARM edition 1.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "RISC-V-Reference-Data-Green-Card"
+              "title": "Computer Organization and Design ARM edition 1"
             }
           },
           {
@@ -44,9 +44,22 @@
               "icon": "lucide-file",
               "title": "Computer Organization and Design The Hardware Software Interface RISC V Edition"
             }
+          },
+          {
+            "id": "8f7fff1ec4bbebb2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "6-Entradas/Computer Organization and Design The Hardware Software Interface ARM Edition.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Computer Organization and Design The Hardware Software Interface ARM Edition"
+            }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -103,8 +116,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "aaadb087b1ebbb94",
@@ -120,7 +132,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "6-Entradas/Computer Organization and Design The Hardware Software Interface RISC V Edition.md",
+                "file": "2-Recursos/Computer Organization and Design RISC V edition.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -130,7 +142,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Computer Organization and Design The Hardware Software Interface RISC V Edition"
+              "title": "Backlinks for Computer Organization and Design RISC V edition"
             }
           },
           {
@@ -196,16 +208,18 @@
       "obsidian-importer:Open Importer": false
     }
   },
-  "active": "022f5c678f4277ff",
+  "active": "f2ff01b76d66dea1",
   "lastOpenFiles": [
-    "Pasted image 20250221133024.png",
-    "2-Recursos/Computer Organization and Design RISC V edition.pdf",
+    "6-Entradas/Computer Organization and Design The Hardware Software Interface ARM Edition.md",
     "6-Entradas/Computer Organization and Design The Hardware Software Interface RISC V Edition.md",
-    "Pasted image 20250221115021.png",
+    "2-Recursos/Computer Organization and Design ARM edition 1.pdf",
+    "Pasted image 20250223070313.png",
+    "2-Recursos/Computer Organization and Design RISC V edition.pdf",
+    "2-Recursos/RISC-V-Reference-Data-Green-Card.pdf",
+    "0-Imagenes/Pasted image 20250221133024.png",
+    "0-Imagenes/Pasted image 20250221115021.png",
     "6-Entradas/Center.md",
     "0-Imagenes/Pasted image 20250221114842.png",
-    "2-Recursos/RISC-V-Reference-Data-Green-Card.pdf",
-    "6-Entradas/Computer Organization and Design The Hardware Software Interface ARM Edition.md",
     "2-Recursos/Computer Organization and Design ARM edition.pdf",
     "2-Recursos/ARM-v8-Quick-Reference-Guide.pdf",
     "0-Imagenes/Pasted image 20250218053656.png",
@@ -214,8 +228,6 @@
     "0-Imagenes/Pasted image 20250217113844.png",
     "0-Imagenes/Pasted image 20250217091421.png",
     "0-Imagenes/Pasted image 20250217091307.png",
-    "0-Imagenes/Pasted image 20250216224258.png",
-    "0-Imagenes/Pasted image 20250216223901.png",
     "3-Etiquetas/Performance.md",
     "Untitled.md",
     "2-Recursos/Libros.md",
@@ -231,7 +243,6 @@
     "6-Entradas",
     "5-Plantillas",
     "4-Indices",
-    "3-Etiquetas",
     "Welcome.md"
   ]
 }
