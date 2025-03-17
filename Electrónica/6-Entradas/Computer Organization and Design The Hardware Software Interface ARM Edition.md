@@ -18,6 +18,47 @@ En este formato de instrucción el opcode puede ser variable de 10 a 11 bits, y 
 ![[Pasted image 20250218053538.png]]
 ![[Pasted image 20250218053656.png]]
 
+
+# ARM ASSEMBLY CODIGOS
+
+## Ejemplo 1
+
+	.global _start
+	_start:
+	
+	mov r0, #4
+	mov r1, r0
+	BL fact
+	B EXIT
+	
+	fact:
+	SUB SP, SP, #16
+	STR LR, [SP,#8]
+	STR r1, [SP,#0]
+	
+	CMP r1, #1
+	
+	BGE L1
+	MOV r2,#1
+	ADD SP, SP,#16
+	
+	BX LR
+	
+	
+	L1: 
+	SUB r1,r1,#1
+	BL fact
+	LDR r1, [SP,#0]
+	LDR LR, [SP,#8]
+	ADD SP, SP, #16
+	MUL r2,r2,r1
+	
+	BX LR
+	
+	EXIT:
+	mov r10, #1
+	mov r11, r2
+	B _start
 # Referencias
 [[Computer Organization and Design ARM edition 1.pdf]]
 

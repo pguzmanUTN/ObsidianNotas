@@ -262,6 +262,9 @@ Valor que indica la dirección asignada más recientemente en una pila y que mue
 ### Nota 10
 
 ![[Pasted image 20250221133024.png]]
+
+### Nota 11
+![[Pasted image 20250316221243.png]]
 ## RISC V ASSEMBLY CODIGOS
 ### EJEMPLO 1 
 			.global _start
