@@ -44,18 +44,6 @@
               "icon": "lucide-file",
               "title": "Computer Organization and Design The Hardware Software Interface RISC V Edition"
             }
-          },
-          {
-            "id": "e4d8b1e762595947",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Pasted image 20250223070313.png"
-              },
-              "icon": "lucide-image",
-              "title": "Pasted image 20250223070313"
-            }
           }
         ],
         "currentTab": 2
@@ -209,10 +197,10 @@
   },
   "active": "620569ce7c31c5cd",
   "lastOpenFiles": [
+    "Pasted image 20250323194909.png",
+    "6-Entradas/Computer Organization and Design The Hardware Software Interface RISC V Edition.md",
     "Pasted image 20250323194959.png",
     "2-Recursos/Computer Organization and Design RISC V edition.pdf",
-    "6-Entradas/Computer Organization and Design The Hardware Software Interface RISC V Edition.md",
-    "Pasted image 20250323194909.png",
     "2-Recursos/guia-practica-de-risc-v-1.0.5 (1).pdf",
     "0-Imagenes/Pasted image 20250323194743.png",
     "0-Imagenes/Pasted image 20250323194725.png",
@@ -228,7 +216,6 @@
     "6-Entradas/Center.md",
     "0-Imagenes/Pasted image 20250221114842.png",
     "2-Recursos/Computer Organization and Design ARM edition.pdf",
-    "0-Imagenes/Pasted image 20250218053656.png",
     "3-Etiquetas/Performance.md",
     "Untitled.md",
     "2-Recursos/Libros.md",

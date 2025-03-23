@@ -276,10 +276,10 @@ Valor que indica la dirección asignada más recientemente en una pila y que mue
 
 #### Implementación RISCV Pipeline sin seguro de Hazards
 
-![[Pasted image 20250323194909.png]]
+![[Pasted image 20250323194909.png|700]]
 
 #### Implementación RISCV con seguro de Data Hazards 
-![[Pasted image 20250323194959.png]]
+![[Pasted image 20250323194959.png|675]]
 
 ## RISC V ASSEMBLY CODIGOS
 ### EJEMPLO 1 
