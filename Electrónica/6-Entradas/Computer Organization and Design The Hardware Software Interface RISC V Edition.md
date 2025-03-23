@@ -265,6 +265,22 @@ Valor que indica la dirección asignada más recientemente en una pila y que mue
 
 ### Nota 11
 ![[Pasted image 20250316221243.png]]
+
+
+### Nota 12
+
+#### Implementación RISCV Single-Cycle
+
+![[Pasted image 20250323194743.png]]
+
+
+#### Implementación RISCV Pipeline sin seguro de Hazards
+
+![[Pasted image 20250323194909.png]]
+
+#### Implementación RISCV con seguro de Data Hazards 
+![[Pasted image 20250323194959.png]]
+
 ## RISC V ASSEMBLY CODIGOS
 ### EJEMPLO 1 
 			.global _start
@@ -424,6 +440,8 @@ En RiscV Assembly
 	 
 	 exit1:
 	 call exit2
+
+
 # Referencias
 [[RISC-V-Reference-Data-Green-Card.pdf]]
 [[Computer Organization and Design RISC V edition.pdf]]
