@@ -280,6 +280,13 @@ Valor que indica la dirección asignada más recientemente en una pila y que mue
 
 #### Implementación RISCV con seguro de Data Hazards 
 ![[Pasted image 20250323194959.png|675]]
+#### Implementación RISCV Final 
+
+![[Pasted image 20250323211930.png|700]]
+
+#### Implementación RISCV FINAL con excepciones 
+![[Pasted image 20250323223904.png]]
+
 
 ## RISC V ASSEMBLY CODIGOS
 ### EJEMPLO 1 

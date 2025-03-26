@@ -35,14 +35,60 @@
             "id": "620569ce7c31c5cd",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "6-Entradas/Computer Organization and Design The Hardware Software Interface RISC V Edition.md",
-                "mode": "source",
-                "source": false
+                "file": "2-Recursos/Computer Organization and Design ARM edition 1.pdf"
               },
-              "icon": "lucide-file",
-              "title": "Computer Organization and Design The Hardware Software Interface RISC V Edition"
+              "icon": "lucide-file-text",
+              "title": "Computer Organization and Design ARM edition 1"
+            }
+          },
+          {
+            "id": "bbb7f00460d49744",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "2-Recursos/ARM-v8-Quick-Reference-Guide.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "ARM-v8-Quick-Reference-Guide"
+            }
+          },
+          {
+            "id": "6bd98d5c25ca60cf",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "2-Recursos/Computer Organization and Design ARM edition 1.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "Computer Organization and Design ARM edition 1"
+            }
+          },
+          {
+            "id": "22ca62eb1188bf0a",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "0-Imagenes/Pasted image 20250323194959.png"
+              },
+              "icon": "lucide-image",
+              "title": "Pasted image 20250323194959"
+            }
+          },
+          {
+            "id": "84ab82be6fad4f86",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "0-Imagenes/Pasted image 20250323211930.png"
+              },
+              "icon": "lucide-image",
+              "title": "Pasted image 20250323211930"
             }
           },
           {
@@ -57,8 +103,7 @@
               "title": "Computer Organization and Design RISC V edition"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -207,26 +252,26 @@
       "obsidian-importer:Open Importer": false
     }
   },
-  "active": "ab94f23fb11dddda",
+  "active": "f2ff01b76d66dea1",
   "lastOpenFiles": [
-    "6-Entradas/Computer Organization and Design The Hardware Software Interface RISC V Edition.md",
-    "6-Entradas/Computer Organization and Design The Hardware Software Interface ARM Edition.md",
-    "Pasted image 20250323194909.png",
-    "Pasted image 20250323194959.png",
+    "2-Recursos/Computer Organization and Design ARM edition 1.pdf",
     "2-Recursos/Computer Organization and Design RISC V edition.pdf",
+    "6-Entradas/Computer Organization and Design The Hardware Software Interface ARM Edition.md",
+    "2-Recursos/ARM-v8-Quick-Reference-Guide.pdf",
     "2-Recursos/guia-practica-de-risc-v-1.0.5 (1).pdf",
+    "6-Entradas/Computer Organization and Design The Hardware Software Interface RISC V Edition.md",
+    "0-Imagenes/Pasted image 20250323223904.png",
+    "0-Imagenes/Pasted image 20250323194959.png",
+    "0-Imagenes/Pasted image 20250323211930.png",
+    "0-Imagenes/Pasted image 20250323211909.png",
+    "0-Imagenes/Pasted image 20250323194909.png",
     "0-Imagenes/Pasted image 20250323194743.png",
     "0-Imagenes/Pasted image 20250323194725.png",
-    "2-Recursos/Computer Organization and Design ARM edition 1.pdf",
     "0-Imagenes/Pasted image 20250316221243.png",
     "0-Imagenes/Pasted image 20250316221148.png",
     "2-Recursos/RISC-V-Reference-Data-Green-Card.pdf",
-    "2-Recursos/ARM-v8-Quick-Reference-Guide.pdf",
     "0-Imagenes/Pasted image 20250223070313.png",
-    "0-Imagenes/Pasted image 20250221133024.png",
-    "0-Imagenes/Pasted image 20250221115021.png",
     "6-Entradas/Center.md",
-    "0-Imagenes/Pasted image 20250221114842.png",
     "2-Recursos/Computer Organization and Design ARM edition.pdf",
     "3-Etiquetas/Performance.md",
     "Untitled.md",
